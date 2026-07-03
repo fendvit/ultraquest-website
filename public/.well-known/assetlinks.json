@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.ultraquest.app",
+      "sha256_cert_fingerprints": [
+        "A8:CA:17:FF:05:DB:E6:9E:DB:1D:3B:9C:96:6F:F9:F4:25:2A:67:F5:1B:FD:E7:A7:CA:DF:43:6F:0E:B7:C0:A9"
+      ]
+    }
+  }
+]

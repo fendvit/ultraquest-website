@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["REPLACE_WITH_APPLE_TEAM_ID.com.ultraquest.app"],
+        "components": [
+          { "/": "/auth*" },
+          { "/": "/dashboard*" },
+          { "/": "/strava-callback*" },
+          { "/": "/reset-password*" },
+          { "/": "/activity/*" },
+          { "/": "/profile/*" }
+        ]
+      }
+    ]
+  }
+}
