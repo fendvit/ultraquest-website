@@ -29,12 +29,13 @@
     a.plain { color: #ff8a55; }
   </style>
   <script>
-    // The native app registers the com.ultraquest.app:// scheme. Bounce the
-    // Strava OAuth "code" (or "error") straight into the app. If App Links are
-    // verified, the OS opens the app before this page ever loads; this is the
-    // fallback for when it doesn't.
+    // The native app registers the com.lovable.ultrarunquest:// scheme (its
+    // real, already-published package id). Bounce the Strava OAuth "code" (or
+    // "error") straight into the app. If App Links are verified, the OS opens
+    // the app before this page ever loads; this is the fallback for when it
+    // doesn't.
     (function () {
-      var appLink = 'com.ultraquest.app://strava-callback' + (window.location.search || '');
+      var appLink = 'com.lovable.ultrarunquest://strava-callback' + (window.location.search || '');
       // Give the browser a tick to render, then hand off to the app.
       window.setTimeout(function () { window.location.replace(appLink); }, 50);
       window.__appLink = appLink;

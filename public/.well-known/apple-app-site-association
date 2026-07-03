@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["REPLACE_WITH_APPLE_TEAM_ID.com.ultraquest.app"],
+        "appIDs": ["REPLACE_WITH_APPLE_TEAM_ID.com.lovable.ultrarunquest"],
         "components": [
           { "/": "/auth*" },
           { "/": "/dashboard*" },
