@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "com.ultraquest.app",
       "sha256_cert_fingerprints": [
-        "A8:CA:17:FF:05:DB:E6:9E:DB:1D:3B:9C:96:6F:F9:F4:25:2A:67:F5:1B:FD:E7:A7:CA:DF:43:6F:0E:B7:C0:A9"
+        "A8:CA:17:FF:05:DB:E6:9E:DB:1D:3B:9C:96:6F:F9:F4:25:2A:67:F5:1B:FD:E7:A7:CA:DF:43:6F:0E:B7:C0:A9",
+        "11:1B:9D:C5:CB:50:C6:49:C9:EC:C5:9C:1E:44:09:A7:76:5B:07:D6:F7:AB:F1:1B:E0:20:5B:B1:8C:84:C8:96"
       ]
     }
   }
