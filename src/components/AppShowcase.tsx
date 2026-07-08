@@ -39,10 +39,10 @@ export default function AppShowcase() {
                   className="w-full h-full"
                 >
                   <SwiperSlide>
-                    <img src="/images/app-screen-1.jpg" alt="UltraQuest home screen with quests and stats" className="w-full h-full object-cover" />
+                    <img src="/images/app-screen-1.jpeg" alt="UltraQuest home screen with quests and stats" className="w-full h-full object-cover" />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <img src="/images/app-screen-2.jpg" alt="UltraQuest virtual expedition map" className="w-full h-full object-cover" />
+                    <img src="/images/app-screen-2.jpeg" alt="UltraQuest virtual expedition map" className="w-full h-full object-cover" />
                   </SwiperSlide>
                 </Swiper>
               </div>
@@ -74,10 +74,10 @@ export default function AppShowcase() {
                   className="w-full h-full"
                 >
                   <SwiperSlide>
-                    <img src="/images/app-screen-3.jpg" alt="UltraQuest community feed with clubs and friends" className="w-full h-full object-cover" />
+                    <img src="/images/app-screen-3.jpeg" alt="UltraQuest community feed with clubs and friends" className="w-full h-full object-cover" />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <img src="/images/app-screen-4.jpg" alt="UltraQuest athlete profile with badges and levels" className="w-full h-full object-cover" />
+                    <img src="/images/app-screen-4.jpeg" alt="UltraQuest athlete profile with badges and levels" className="w-full h-full object-cover" />
                   </SwiperSlide>
                 </Swiper>
               </div>
