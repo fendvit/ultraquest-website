@@ -39,10 +39,10 @@ export default function AppShowcase() {
                   className="w-full h-full"
                 >
                   <SwiperSlide>
-                    <img src="/images/app-screen-1.jpg" alt="App Dashboard 1" className="w-full h-full object-cover" />
+                    <img src="/images/app-screen-1.jpg" alt="UltraQuest home screen with quests and stats" className="w-full h-full object-cover" />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <img src="/images/app-screen-2.jpg" alt="App Dashboard 2" className="w-full h-full object-cover" />
+                    <img src="/images/app-screen-2.jpg" alt="UltraQuest virtual expedition map" className="w-full h-full object-cover" />
                   </SwiperSlide>
                 </Swiper>
               </div>
@@ -51,8 +51,8 @@ export default function AppShowcase() {
             <div className="custom-pagination-1 flex justify-center gap-2 mt-6 h-4" />
 
             <div className="mt-4 text-center">
-              <h3 className="font-semibold text-xl">Dashboard</h3>
-              <p className="text-gray-400 text-sm mt-1">Track your progress</p>
+              <h3 className="font-semibold text-xl">Home &amp; Quests</h3>
+              <p className="text-gray-400 text-sm mt-1">Pick a quest, map your expedition</p>
             </div>
           </FadeIn>
 
@@ -74,10 +74,10 @@ export default function AppShowcase() {
                   className="w-full h-full"
                 >
                   <SwiperSlide>
-                    <img src="/images/app-screen-3.jpg" alt="App Community 1" className="w-full h-full object-cover" />
+                    <img src="/images/app-screen-3.jpg" alt="UltraQuest community feed with clubs and friends" className="w-full h-full object-cover" />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <img src="/images/app-screen-4.jpg" alt="App Community 2" className="w-full h-full object-cover" />
+                    <img src="/images/app-screen-4.jpg" alt="UltraQuest athlete profile with badges and levels" className="w-full h-full object-cover" />
                   </SwiperSlide>
                 </Swiper>
               </div>
@@ -86,8 +86,8 @@ export default function AppShowcase() {
             <div className="custom-pagination-2 flex justify-center gap-2 mt-6 h-4" />
 
             <div className="mt-4 text-center">
-              <h3 className="font-semibold text-xl">Community</h3>
-              <p className="text-gray-400 text-sm mt-1">Connect with athletes</p>
+              <h3 className="font-semibold text-xl">Community &amp; Profile</h3>
+              <p className="text-gray-400 text-sm mt-1">Clubs, friends, badges &amp; levels</p>
             </div>
           </FadeIn>
 
