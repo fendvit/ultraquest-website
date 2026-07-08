@@ -20,8 +20,8 @@ const faqs = [
     answer: "You focus on one active Quest at a time to stay dedicated to crushing your current goal. Once you complete it (or choose to leave), you can immediately jump into a new challenge — including in a different sport."
   },
   {
-    question: "What are live challenges?",
-    answer: "Live challenges are real-time endurance events like 4×4×48 and Backyard Ultra, where everyone competes on the same clock. Register for a cohort event, track each round live, and watch the survivors board as athletes drop out one by one."
+    question: "What are Real Challenges?",
+    answer: "Real Challenges are real-time endurance events like 4×4×48 and Backyard Ultra, where everyone competes on the same clock. Register for a cohort event, track each round as it happens, and watch the survivors board as athletes drop out one by one — miss a window and you're out."
   },
   {
     question: "How long do I have to complete a Quest?",
