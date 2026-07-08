@@ -19,7 +19,7 @@ export default function Premium() {
             <span className="text-primary">Full Potential</span>
           </h2>
           <p className="text-gray-400 text-lg">
-            Elevate your virtual racing experience with Premium at just $7.99/month.
+            Elevate your training across every sport with Premium at just $7.99/month.
           </p>
         </FadeIn>
 
@@ -48,9 +48,9 @@ export default function Premium() {
               <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
                 <Users className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold mb-3 uppercase">Custom Race Creation</h3>
+              <h3 className="text-xl font-bold mb-3 uppercase">Custom Quest Creation</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Design your own races with custom distances and descriptions. Share invite codes to race with friends and clubs.
+                Design your own Quests for any sport with custom distances, reps and descriptions. Share invite codes to compete with friends and clubs.
               </p>
             </div>
           </FadeIn>
@@ -85,12 +85,12 @@ export default function Premium() {
 
             <div className="divide-y divide-white/5">
               {[
-                { name: 'Join virtual races', free: true, premium: true },
-                { name: 'Log kilometers manually', free: true, premium: true },
+                { name: 'Join Quests (all sports)', free: true, premium: true },
+                { name: 'Log distance & strength manually', free: true, premium: true },
                 { name: 'Strava sync', free: true, premium: true },
                 { name: 'Leaderboards & badges', free: true, premium: true },
                 { name: 'AI Training Insights', free: false, premium: true },
-                { name: 'Create custom races', free: false, premium: true },
+                { name: 'Create custom Quests', free: false, premium: true },
                 { name: 'Medal Race entries', free: '$5/race', premium: 'Free', isText: true },
                 { name: 'Price', free: '$0', premium: '$7.99/mo', isText: true, isLast: true },
               ].map((row, idx) => (

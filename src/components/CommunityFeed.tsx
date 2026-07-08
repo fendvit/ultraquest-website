@@ -3,10 +3,10 @@ import FadeIn from './FadeIn';
 
 const activities = [
   { user: 'Nina P.', text: 'reached <span class="text-primary font-semibold">75%</span> on <strong>UTMB</strong>', time: '32 min ago', icon: <Flag className="w-4 h-4 text-primary" />, initials: 'NP' },
-  { user: 'James L.', text: 'logged <span class="text-primary font-semibold">8.3 km</span> on <strong>Hardrock 100</strong>', time: '25 min ago', icon: <TrendingUp className="w-4 h-4 text-gray-500" />, initials: 'JL' },
-  { user: 'Elena R.', text: 'started on <strong>UTMB</strong>', time: '18 min ago', icon: <Flame className="w-4 h-4 text-gray-400" />, initials: 'ER' },
-  { user: 'Alex M.', text: 'completed on <strong>Western States</strong>', time: '12 min ago', icon: <Award className="w-4 h-4 text-green-500" />, initials: 'AM' },
-  { user: 'Sarah K.', text: 'reached <span class="text-primary font-semibold">50%</span> on <strong>Badwater 135</strong>', time: '5 min ago', icon: <Flag className="w-4 h-4 text-primary" />, initials: 'SK' },
+  { user: 'James L.', text: 'logged <span class="text-primary font-semibold">42 km</span> on <strong>Everesting Ride</strong>', time: '25 min ago', icon: <TrendingUp className="w-4 h-4 text-gray-500" />, initials: 'JL' },
+  { user: 'Elena R.', text: 'logged <span class="text-primary font-semibold">2,400 kg</span> on <strong>Iron Gauntlet</strong>', time: '18 min ago', icon: <Flame className="w-4 h-4 text-gray-400" />, initials: 'ER' },
+  { user: 'Alex M.', text: 'completed <strong>Western States</strong>', time: '12 min ago', icon: <Award className="w-4 h-4 text-green-500" />, initials: 'AM' },
+  { user: 'Sarah K.', text: 'reached <span class="text-primary font-semibold">50%</span> on <strong>1000 Pull-Up Quest</strong>', time: '5 min ago', icon: <Flag className="w-4 h-4 text-primary" />, initials: 'SK' },
 ];
 
 export default function CommunityFeed() {
@@ -20,7 +20,7 @@ export default function CommunityFeed() {
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 uppercase">
             The Community in <span className="text-primary">Motion</span>
           </h2>
-          <p className="text-gray-400">Watch runners from around the world conquering their virtual ultramarathons in real-time.</p>
+          <p className="text-gray-400">Watch athletes from around the world conquering their Quests across every sport in real-time.</p>
         </FadeIn>
 
         <FadeIn delay={0.2} direction="up" className="bg-[#1c1f22] border border-white/5 rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden">

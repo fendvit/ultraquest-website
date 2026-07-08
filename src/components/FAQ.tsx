@@ -4,40 +4,48 @@ import FadeIn from './FadeIn';
 
 const faqs = [
   {
-    question: "How does virtual racing work?",
-    answer: "Virtual racing allows you to complete legendary ultramarathon distances at your own pace, from anywhere in the world. Your running kilometers are tracked via GPS tracking or Strava sync, and they accumulate toward your race distance. When you reach the finish, you've completed the race!"
+    question: "Which sports does UltraQuest support?",
+    answer: "UltraQuest is a multi-sport platform covering running, cycling, weightlifting, and calisthenics. Switch sports anytime — the whole app adapts, with its own Quests, leaderboards, and theme for each sport."
   },
   {
-    question: "How do I track my runs?",
-    answer: "Use the built-in GPS tracker in the app to record your runs in real time, or connect your Strava account for automatic activity syncing. Both methods count toward your race progress!"
+    question: "How do Quests work?",
+    answer: "Quests let you complete legendary challenges at your own pace, from anywhere in the world. Depending on the sport, your GPS distance (running, cycling) or your logged sets and reps (weightlifting, calisthenics) accumulate toward the goal. When you reach the finish, you've completed the Quest!"
   },
   {
-    question: "Can I participate in multiple races at once?",
-    answer: "You focus on one race at a time—this keeps you dedicated to crushing your current goal. Once you complete a race (or choose to leave it), you can immediately join a new challenge."
+    question: "How do I track my activity?",
+    answer: "Use the built-in GPS tracker for running and cycling — it keeps recording in the background even with your screen off — or log your strength sessions manually. You can also connect Strava for automatic syncing. Everything counts toward your active Quest, even offline: sessions sync automatically once you're back online."
   },
   {
-    question: "How long do I have to complete a race?",
-    answer: "There are no time limits! You can take as long as you need to complete a virtual race. It's all about your personal journey and consistency."
+    question: "Can I take on multiple Quests at once?",
+    answer: "You focus on one active Quest at a time to stay dedicated to crushing your current goal. Once you complete it (or choose to leave), you can immediately jump into a new challenge — including in a different sport."
+  },
+  {
+    question: "What are live challenges?",
+    answer: "Live challenges are real-time endurance events like 4×4×48 and Backyard Ultra, where everyone competes on the same clock. Register for a cohort event, track each round live, and watch the survivors board as athletes drop out one by one."
+  },
+  {
+    question: "How long do I have to complete a Quest?",
+    answer: "Most Quests have no time limit — take as long as you need. Some special challenges, like time-limited Quests and live events, do have deadlines, and those are always shown up front before you join."
   },
   {
     question: "Is it free to participate?",
-    answer: "Yes! The core UltraQuest experience is completely free. You can join virtual races, track your runs, sync with Strava, and earn digital badges at no cost. We also offer a Premium tier with advanced features and free Medal Race entries."
+    answer: "Yes! The core UltraQuest experience is completely free across all four sports. You can join Quests, track your activity, sync with Strava, join clubs, and earn badges at no cost. We also offer a Premium tier with advanced features and free Medal Race entries."
   },
   {
     question: "What are Medal Races?",
-    answer: "Medal Races are special events where you earn a real, physical medal shipped directly to your door upon completion! These races have an entry fee ($5/race), but they are completely free to enter if you have an UltraQuest Premium subscription."
+    answer: "Medal Races are special events where you earn a real, physical medal shipped directly to your door upon completion! These have an entry fee ($5/race), but they are completely free to enter if you have an UltraQuest Premium subscription."
   },
   {
     question: "What is UltraQuest Premium?",
-    answer: "Premium is our subscription tier ($7.99/month) that unlocks your full potential. It includes AI Training Insights, the ability to create Custom Races, and free entry to all Medal Races."
+    answer: "Premium is our subscription tier ($7.99/month) that unlocks your full potential. It includes AI Training Insights, the ability to create Custom Quests for any sport, and free entry to all Medal Races."
   },
   {
     question: "Can I connect my Strava account?",
-    answer: "Absolutely! You can easily connect your Strava account to automatically sync all your running activities directly into UltraQuest."
+    answer: "Absolutely! You can connect Strava to automatically sync your running and cycling activities directly into UltraQuest."
   },
   {
-    question: "What are custom races?",
-    answer: "Custom races are a Premium feature that allows you to design your own virtual races with custom distances. You can share invite codes with your friends or run clubs to race together on your own terms."
+    question: "What are custom Quests?",
+    answer: "Custom Quests are a Premium feature that lets you design your own challenges for any sport, with custom distances or rep goals. Share invite codes with your friends or clubs to compete together on your own terms."
   }
 ];
 

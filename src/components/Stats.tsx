@@ -11,7 +11,7 @@ export default function Stats() {
               <Mountain className="w-5 h-5" />
               <span className="text-4xl font-extrabold">52+</span>
             </div>
-            <div className="text-[10px] uppercase tracking-widest text-gray-500">Epic Races</div>
+            <div className="text-[10px] uppercase tracking-widest text-gray-500">Epic Quests</div>
           </FadeIn>
           <FadeIn delay={0.2} className="py-4 md:py-0">
             <div className="flex items-center justify-center gap-3 text-primary mb-2">

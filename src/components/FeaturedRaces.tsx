@@ -50,11 +50,11 @@ export default function FeaturedRaces() {
               <span className="w-8 h-px bg-primary" /> Roster
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
-              FEATURED <span className="text-white">RACES</span>
+              FEATURED <span className="text-white">QUESTS</span>
             </h2>
           </div>
           <button className="text-sm font-semibold tracking-widest uppercase flex items-center gap-1 hover:text-primary transition-colors">
-            View all races <ChevronRight className="w-4 h-4" />
+            View all quests <ChevronRight className="w-4 h-4" />
           </button>
         </FadeIn>
 

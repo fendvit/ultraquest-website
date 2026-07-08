@@ -3,19 +3,19 @@ import FadeIn from './FadeIn';
 const steps = [
   {
     title: 'CREATE YOUR ACCOUNT',
-    desc: 'Sign up in seconds and set up your runner profile. Connect your Strava for automatic syncing or use built-in GPS tracking.',
+    desc: 'Sign up in seconds and set up your athlete profile. Pick your sport, connect Strava for automatic syncing, or use built-in GPS tracking.',
   },
   {
-    title: 'CHOOSE YOUR CHALLENGE',
-    desc: 'Pick one legendary ultramarathon to focus on. Complete it or leave to start a new adventure—one race at a time.',
+    title: 'CHOOSE YOUR QUEST',
+    desc: 'Pick a Quest to focus on — a legendary ultra, a cycling epic, or a strength challenge. Complete it or leave to start a new adventure, one at a time.',
   },
   {
-    title: 'TRACK YOUR RUNS',
-    desc: 'Use the built-in GPS tracker or sync from Strava. Every kilometer counts toward your active race.',
+    title: 'LOG YOUR SESSIONS',
+    desc: 'Use the built-in GPS tracker (it keeps recording in the background, even with the screen off), sync from Strava, or log your strength sets and reps. Every kilometer and rep counts toward your active Quest.',
   },
   {
     title: 'FINISH & EARN REWARDS',
-    desc: 'Complete races to unlock achievements. Join Medal Races to earn real physical medals shipped to your door.',
+    desc: 'Complete Quests to unlock tiered badges and level up. Join Medal Races to earn real physical medals shipped to your door.',
   }
 ];
 

@@ -15,7 +15,7 @@ export default function AppShowcase() {
             HOW IT LOOKS <span className="text-primary">INSIDE</span>
           </h2>
           <p className="mt-4 text-gray-400 max-w-xl mx-auto text-lg">
-            A sleek, powerful interface designed for runners who demand more from their training
+            A sleek, powerful interface designed for athletes who demand more from every session
           </p>
         </FadeIn>
 
@@ -87,7 +87,7 @@ export default function AppShowcase() {
 
             <div className="mt-4 text-center">
               <h3 className="font-semibold text-xl">Community</h3>
-              <p className="text-gray-400 text-sm mt-1">Connect with runners</p>
+              <p className="text-gray-400 text-sm mt-1">Connect with athletes</p>
             </div>
           </FadeIn>
 

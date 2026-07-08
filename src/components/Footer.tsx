@@ -8,7 +8,7 @@ export default function Footer() {
               <img src="/images/logo-main.png" alt="UltraQuest Logo" className="h-14 md:h-16 object-contain group-hover:scale-105 transition-transform" />
             </a>
             <p className="text-gray-400 text-sm max-w-sm">
-              The premier virtual ultramarathon platform. Run anywhere, conquer the world's toughest races, and join a global community of endurance athletes.
+              The multi-sport challenge platform. Run, ride and lift your way through the world's toughest Quests, and join a global community of endurance athletes.
             </p>
           </div>
           
@@ -16,7 +16,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">PLATFORM</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li><a href="#" className="hover:text-primary transition-colors">How it Works</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Virtual Races</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Quests</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Medal Races</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Premium</a></li>
             </ul>

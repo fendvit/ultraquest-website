@@ -30,21 +30,21 @@ export default function Hero() {
         <FadeIn delay={0.1}>
           <div className="inline-flex items-center gap-2 border border-primary/30 bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-8 self-start">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            VIRTUAL ULTRAMARATHON PLATFORM
+            MULTI-SPORT CHALLENGE PLATFORM
           </div>
         </FadeIn>
-        
+
         <FadeIn delay={0.2}>
           <h1 className="text-7xl md:text-8xl font-extrabold uppercase tracking-tighter leading-[0.9] mb-8">
-            RUN<br/>
+            TAKE ON<br/>
             <span className="text-primary">LEGENDARY</span><br/>
-            RACES
+            QUESTS
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.3}>
           <p className="text-lg md:text-xl text-gray-300 max-w-xl mb-10 leading-relaxed">
-            Complete iconic ultramarathons virtually. Track every kilometer, compete with runners worldwide, and conquer the impossible.
+            Run, ride, and lift your way through iconic challenges. Track every kilometer and every rep, compete with athletes worldwide, and conquer the impossible.
           </p>
         </FadeIn>        <FadeIn delay={0.4} direction="up" className="flex flex-col sm:flex-row items-center justify-start gap-4">
           <AppStoreButton />

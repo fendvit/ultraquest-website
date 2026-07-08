@@ -83,7 +83,7 @@ export default function Navbar() {
 
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           <a href="#how-it-works" onClick={(e) => scrollTo(e, '#how-it-works')} className={navLinkClass('how-it-works')}>HOW IT WORKS</a>
-          <a href="#races" onClick={(e) => scrollTo(e, '#races')} className={navLinkClass('races')}>RACES</a>
+          <a href="#races" onClick={(e) => scrollTo(e, '#races')} className={navLinkClass('races')}>QUESTS</a>
           <a href="#premium" onClick={(e) => scrollTo(e, '#premium')} className={navLinkClass('premium', 'text-primary hover:text-[#e65c00]')}>PREMIUM</a>
           <a href="#faq" onClick={(e) => scrollTo(e, '#faq')} className={navLinkClass('faq')}>FAQ</a>
         </nav>

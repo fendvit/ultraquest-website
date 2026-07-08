@@ -6,20 +6,20 @@ export default function Expedition() {
     {
       id: "01",
       icon: <Target className="w-8 h-8 text-primary" />,
-      title: "SET YOUR GOAL",
-      description: "Choose from legendary ultramarathons like Badwater 135, UTMB, or Krakonošova stovka. Focus on one epic challenge at a time."
+      title: "PICK YOUR QUEST",
+      description: "Choose your sport, then take on a legendary Quest — from ultras like Badwater 135 and UTMB to cycling epics and strength challenges. Focus on one at a time."
     },
     {
       id: "02",
       icon: <Users className="w-8 h-8 text-primary" />,
-      title: "RUN TOGETHER",
-      description: "Compete on leaderboards, connect with friends, and stay motivated with the global running community. Create custom races for your crew."
+      title: "TRAIN TOGETHER",
+      description: "Compete on sport-aware leaderboards, join clubs and chat with your crew, and stay motivated with a global community. Create custom Quests for your friends."
     },
     {
       id: "03",
       icon: <Trophy className="w-8 h-8 text-primary" />,
       title: "ACHIEVE GLORY",
-      description: "Complete races to earn badges and climb the rankings. Join Medal Races to earn real physical medals shipped to your door."
+      description: "Complete Quests to earn tiered badges, level up, and climb the rankings. Join Medal Races to earn real physical medals shipped to your door."
     }
   ];
 
@@ -31,11 +31,11 @@ export default function Expedition() {
             THE JOURNEY
           </div>
           <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
-            YOUR VIRTUAL RUNNING<br />
+            YOUR MULTI-SPORT<br />
             <span className="text-primary">EXPEDITION</span>
           </h2>
           <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
-            Complete legendary ultramarathons from anywhere in the world. Track your daily runs and watch your progress accumulate toward epic finishes.
+            Take on legendary challenges across running, cycling, weightlifting and calisthenics — from anywhere in the world. Log every session and watch your progress accumulate toward epic finishes.
           </p>
         </FadeIn>
 
@@ -58,7 +58,7 @@ export default function Expedition() {
 
         <FadeIn delay={0.5} className="mt-16 text-center">
           <button className="bg-primary hover:bg-[#e65c00] text-white px-8 py-3 rounded-md font-semibold uppercase tracking-wide transition-all inline-flex items-center gap-2">
-            Start running <span className="text-xl">→</span>
+            Start your quest <span className="text-xl">→</span>
           </button>
         </FadeIn>
       </div>
