@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
     <footer className="bg-background border-t border-white/10 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 sm:mb-16">
           <div className="col-span-2">
             <a href="#" className="flex items-center gap-2 group mb-6">
               <img src="/images/logo-main.png" alt="UltraQuest Logo" className="h-14 md:h-16 object-contain group-hover:scale-105 transition-transform" />

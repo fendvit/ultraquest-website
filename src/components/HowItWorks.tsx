@@ -21,13 +21,13 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 bg-[#0d1512] bg-grid-pattern relative border-t border-white/5">
-      <div className="container mx-auto px-6 max-w-4xl">
-        <FadeIn className="text-center mb-16">
+    <section id="how-it-works" className="py-16 sm:py-20 md:py-24 bg-[#0d1512] bg-grid-pattern relative border-t border-white/5">
+      <div className="container mx-auto px-5 sm:px-6 max-w-4xl">
+        <FadeIn className="text-center mb-12 sm:mb-16">
           <div className="inline-block border border-primary/30 text-primary text-[10px] font-semibold tracking-widest px-3 py-1 rounded uppercase mb-4">
             Mission Brief
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 uppercase">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 uppercase">
             How It <span className="text-primary">Works</span>
           </h2>
           <p className="text-gray-400">Simple, straightforward, and designed to keep you motivated every step of the way.</p>
@@ -35,7 +35,7 @@ export default function HowItWorks() {
 
         <div className="relative pl-4 md:pl-0">
           {steps.map((step, index) => (
-            <div key={index} className="flex gap-6 md:gap-8 mb-12 relative group">
+            <div key={index} className="flex gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-12 relative group">
               {/* Vertical line connecting steps */}
               {index !== steps.length - 1 && (
                 <div className="absolute top-12 bottom-[-48px] left-[23px] w-[2px] bg-gradient-to-b from-primary/50 to-transparent z-0"></div>

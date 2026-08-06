@@ -3,8 +3,8 @@ import FadeIn from './FadeIn';
 
 export default function Stats() {
   return (
-    <section className="py-12 border-y border-white/5 bg-[#111315]/50 relative z-10">
-      <div className="container mx-auto px-6 max-w-5xl">
+    <section className="py-10 sm:py-12 border-y border-white/5 bg-[#111315]/50 relative z-10">
+      <div className="container mx-auto px-5 sm:px-6 max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
           <FadeIn delay={0.1} className="py-4 md:py-0">
             <div className="flex items-center justify-center gap-3 text-primary mb-2">

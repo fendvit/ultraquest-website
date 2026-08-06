@@ -6,12 +6,12 @@ import 'swiper/css/pagination';
 
 export default function AppShowcase() {
   return (
-    <section className="py-24 relative overflow-hidden bg-[#000]">
+    <section className="py-16 sm:py-20 md:py-24 relative overflow-hidden bg-[#000]">
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
       
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <FadeIn delay={0.1} className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-extrabold uppercase tracking-tight">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+        <FadeIn delay={0.1} className="text-center mb-12 sm:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold uppercase tracking-tight">
             HOW IT LOOKS <span className="text-primary">INSIDE</span>
           </h2>
           <p className="mt-4 text-gray-400 max-w-xl mx-auto text-lg">
@@ -19,11 +19,11 @@ export default function AppShowcase() {
           </p>
         </FadeIn>
 
-        <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-14 md:gap-24">
           
           {/* Phone 1: Dashboard */}
           <FadeIn delay={0.2} direction="up" className="flex flex-col items-center">
-            <div className="w-[300px] h-[610px] bg-[#000] rounded-[48px] p-2 border-[2px] border-[#222] shadow-[0_0_60px_rgba(255,102,0,0.15)] hover:shadow-[0_0_80px_rgba(255,102,0,0.3)] hover:-translate-y-4 transition-all duration-500 relative group cursor-grab active:cursor-grabbing">
+            <div className="w-[270px] h-[550px] sm:w-[300px] sm:h-[610px] bg-[#000] rounded-[40px] sm:rounded-[48px] p-2 border-[2px] border-[#222] shadow-[0_0_60px_rgba(255,102,0,0.15)] hover:shadow-[0_0_80px_rgba(255,102,0,0.3)] hover:-translate-y-4 transition-all duration-500 relative group cursor-grab active:cursor-grabbing">
               {/* Dynamic Island */}
               <div className="absolute top-4 inset-x-0 z-20 flex justify-center">
                 <div className="w-24 h-7 bg-black rounded-full flex items-center justify-between px-2.5">
@@ -32,7 +32,7 @@ export default function AppShowcase() {
                 </div>
               </div>
               
-              <div className="w-full h-full rounded-[40px] overflow-hidden bg-background relative z-10 border border-white/10">
+              <div className="w-full h-full rounded-[32px] sm:rounded-[40px] overflow-hidden bg-background relative z-10 border border-white/10">
                 <Swiper
                   pagination={{ el: '.custom-pagination-1', clickable: true, bulletClass: 'swiper-custom-bullet', bulletActiveClass: 'swiper-custom-bullet-active' }}
                   modules={[Pagination]}
@@ -58,7 +58,7 @@ export default function AppShowcase() {
 
           {/* Phone 2: Community */}
           <FadeIn delay={0.4} direction="up" className="flex flex-col items-center">
-            <div className="w-[300px] h-[610px] bg-[#000] rounded-[48px] p-2 border-[2px] border-[#222] shadow-[0_0_60px_rgba(255,102,0,0.15)] hover:shadow-[0_0_80px_rgba(255,102,0,0.3)] hover:-translate-y-4 transition-all duration-500 relative group cursor-grab active:cursor-grabbing">
+            <div className="w-[270px] h-[550px] sm:w-[300px] sm:h-[610px] bg-[#000] rounded-[40px] sm:rounded-[48px] p-2 border-[2px] border-[#222] shadow-[0_0_60px_rgba(255,102,0,0.15)] hover:shadow-[0_0_80px_rgba(255,102,0,0.3)] hover:-translate-y-4 transition-all duration-500 relative group cursor-grab active:cursor-grabbing">
               {/* Dynamic Island */}
               <div className="absolute top-4 inset-x-0 z-20 flex justify-center">
                 <div className="w-24 h-7 bg-black rounded-full flex items-center justify-between px-2.5">
@@ -67,7 +67,7 @@ export default function AppShowcase() {
                 </div>
               </div>
               
-              <div className="w-full h-full rounded-[40px] overflow-hidden bg-background relative z-10 border border-white/10">
+              <div className="w-full h-full rounded-[32px] sm:rounded-[40px] overflow-hidden bg-background relative z-10 border border-white/10">
                 <Swiper
                   pagination={{ el: '.custom-pagination-2', clickable: true, bulletClass: 'swiper-custom-bullet', bulletActiveClass: 'swiper-custom-bullet-active' }}
                   modules={[Pagination]}

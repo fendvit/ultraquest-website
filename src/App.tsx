@@ -14,16 +14,21 @@ import Footer from './components/Footer';
 
 import { useEffect } from 'react';
 import Lenis from 'lenis';
+import { registerLenis } from './lib/smoothScroll';
 
 function App() {
   useEffect(() => {
     const lenis = new Lenis();
+    registerLenis(lenis);
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
-    return () => lenis.destroy();
+    return () => {
+      registerLenis(null);
+      lenis.destroy();
+    };
   }, []);
   return (
     <div className="min-h-screen bg-background text-white selection:bg-primary/30">

@@ -70,14 +70,14 @@ const quests: Quest[] = [
 
 export default function FeaturedRaces() {
   return (
-    <section id="races" className="py-24 bg-gradient-to-b from-[#0d1512] to-[#0a0c0e] border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="races" className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-[#0d1512] to-[#0a0c0e] border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
         <FadeIn delay={0.1} className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <div className="inline-flex items-center gap-2 text-primary font-semibold tracking-widest text-sm uppercase mb-4">
               <span className="w-8 h-px bg-primary" /> Roster
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
               FEATURED <span className="text-white">QUESTS</span>
             </h2>
           </div>
@@ -132,7 +132,7 @@ export default function FeaturedRaces() {
                       {quest.distance}
                     </span>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
                     <p
                       className="text-sm font-semibold uppercase tracking-widest mb-2"
                       style={{ color: 'hsl(var(--accent))' }}
@@ -140,7 +140,7 @@ export default function FeaturedRaces() {
                       {quest.location}
                     </p>
                     <h3
-                      className="text-2xl font-semibold uppercase leading-tight mb-4 transition-colors group-hover:[color:hsl(var(--accent))]"
+                      className="text-xl sm:text-2xl font-semibold uppercase leading-tight mb-4 transition-colors group-hover:[color:hsl(var(--accent))]"
                     >
                       {quest.name}
                     </h3>

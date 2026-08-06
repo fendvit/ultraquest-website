@@ -3,18 +3,18 @@ import FadeIn from './FadeIn';
 
 export default function Premium() {
   return (
-    <section id="premium" className="py-24 bg-[#0a0c0e] relative border-t border-white/5 overflow-hidden">
+    <section id="premium" className="py-16 sm:py-20 md:py-24 bg-[#0a0c0e] relative border-t border-white/5 overflow-hidden">
       {/* Orange Glow Background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,102,0,0.08)_0%,transparent_70%)] pointer-events-none" />
       
-      <div className="container mx-auto px-6 max-w-5xl relative z-10">
+      <div className="container mx-auto px-5 sm:px-6 max-w-5xl relative z-10">
         
         {/* Header */}
-        <FadeIn className="text-center mb-16">
+        <FadeIn className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 border border-primary/30 text-primary text-[10px] font-bold tracking-widest px-3 py-1 rounded uppercase mb-6 bg-primary/10">
             <Sparkles className="w-3 h-3" /> PREMIUM
           </div>
-          <h2 className="text-4xl md:text-6xl font-black uppercase mb-4 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black uppercase mb-4 tracking-tight leading-tight">
             Unlock Your <br/>
             <span className="text-primary">Full Potential</span>
           </h2>
@@ -26,7 +26,7 @@ export default function Premium() {
         {/* Feature Cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-24">
           <FadeIn delay={0.2} direction="up" className="h-full">
-            <div className="bg-[#1c1f22]/80 backdrop-blur-sm border border-white/5 rounded-2xl p-8 relative group hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,102,0,0.15)] transition-all duration-500 overflow-hidden h-full">
+            <div className="bg-[#1c1f22]/80 backdrop-blur-sm border border-white/5 rounded-2xl p-6 sm:p-8 relative group hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,102,0,0.15)] transition-all duration-500 overflow-hidden h-full">
               <div className="absolute top-0 right-0 p-4">
                 <div className="text-[9px] uppercase tracking-widest text-primary font-bold bg-primary/10 px-2 py-1 rounded">Smart Coaching</div>
               </div>
@@ -41,7 +41,7 @@ export default function Premium() {
           </FadeIn>
 
           <FadeIn delay={0.3} direction="up" className="h-full">
-            <div className="bg-[#1c1f22]/80 backdrop-blur-sm border border-white/5 rounded-2xl p-8 relative group hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,102,0,0.15)] transition-all duration-500 overflow-hidden h-full">
+            <div className="bg-[#1c1f22]/80 backdrop-blur-sm border border-white/5 rounded-2xl p-6 sm:p-8 relative group hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,102,0,0.15)] transition-all duration-500 overflow-hidden h-full">
               <div className="absolute top-0 right-0 p-4">
                 <div className="text-[9px] uppercase tracking-widest text-primary font-bold bg-primary/10 px-2 py-1 rounded">Your Rules</div>
               </div>
@@ -56,7 +56,7 @@ export default function Premium() {
           </FadeIn>
 
           <FadeIn delay={0.4} direction="up" className="h-full">
-            <div className="bg-[#1c1f22]/80 backdrop-blur-sm border border-white/5 rounded-2xl p-8 relative group hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,102,0,0.15)] transition-all duration-500 overflow-hidden h-full">
+            <div className="bg-[#1c1f22]/80 backdrop-blur-sm border border-white/5 rounded-2xl p-6 sm:p-8 relative group hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,102,0,0.15)] transition-all duration-500 overflow-hidden h-full">
               <div className="absolute top-0 right-0 p-4">
                 <div className="text-[9px] uppercase tracking-widest text-primary font-bold bg-primary/10 px-2 py-1 rounded">Real Rewards</div>
               </div>
@@ -77,10 +77,11 @@ export default function Premium() {
             <h3 className="text-2xl font-bold uppercase tracking-wider">Compare Features</h3>
           </div>
           <div className="bg-[#1c1f22]/80 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden shadow-2xl max-w-4xl mx-auto">
-            <div className="grid grid-cols-3 border-b border-white/10 p-6 md:p-8 items-center bg-black/20">
-              <div className="text-gray-400 font-semibold text-sm md:text-base">Feature</div>
-              <div className="text-center text-white font-bold text-sm md:text-base">Free</div>
-              <div className="text-center text-primary font-bold text-sm md:text-base">Premium</div>
+            {/* Feature names need more room than the two value columns on a phone. */}
+            <div className="grid grid-cols-[1.5fr_1fr_1fr] sm:grid-cols-3 border-b border-white/10 p-4 sm:p-6 md:p-8 items-center bg-black/20">
+              <div className="text-gray-400 font-semibold text-xs sm:text-sm md:text-base">Feature</div>
+              <div className="text-center text-white font-bold text-xs sm:text-sm md:text-base">Free</div>
+              <div className="text-center text-primary font-bold text-xs sm:text-sm md:text-base">Premium</div>
             </div>
 
             <div className="divide-y divide-white/5">
@@ -94,9 +95,9 @@ export default function Premium() {
                 { name: 'Medal Race entries', free: '$5/race', premium: 'Free', isText: true },
                 { name: 'Price', free: '$0', premium: '$7.99/mo', isText: true, isLast: true },
               ].map((row, idx) => (
-                <div key={idx} className="grid grid-cols-3 p-6 md:px-8 md:py-5 items-center hover:bg-white/5 transition-colors">
-                  <div className={`text-sm md:text-base ${row.isLast ? 'font-bold' : 'text-gray-300'}`}>{row.name}</div>
-                  <div className="flex justify-center text-sm md:text-base font-bold">
+                <div key={idx} className="grid grid-cols-[1.5fr_1fr_1fr] sm:grid-cols-3 p-4 sm:p-6 md:px-8 md:py-5 items-center gap-2 hover:bg-white/5 transition-colors">
+                  <div className={`text-xs sm:text-sm md:text-base pr-2 ${row.isLast ? 'font-bold' : 'text-gray-300'}`}>{row.name}</div>
+                  <div className="flex justify-center text-xs sm:text-sm md:text-base font-bold">
                     {row.isText ? (
                       <span>{row.free}</span>
                     ) : row.free ? (
@@ -105,7 +106,7 @@ export default function Premium() {
                       <X className="w-5 h-5 text-gray-600" />
                     )}
                   </div>
-                  <div className="flex justify-center text-sm md:text-base font-bold text-primary">
+                  <div className="flex justify-center text-xs sm:text-sm md:text-base font-bold text-primary">
                     {row.isText ? (
                       <span>{row.premium}</span>
                     ) : row.premium ? (

@@ -35,15 +35,15 @@ const sports = [
 
 export default function Sports() {
   return (
-    <section className="py-24 bg-[#0a0c0e] relative border-t border-white/5 overflow-hidden">
+    <section className="py-16 sm:py-20 md:py-24 bg-[#0a0c0e] relative border-t border-white/5 overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <FadeIn delay={0.1} className="text-center mb-16">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 relative z-10">
+        <FadeIn delay={0.1} className="text-center mb-12 sm:mb-16">
           <div className="inline-flex border border-primary/30 text-primary text-xs font-semibold uppercase px-3 py-1 rounded mb-4">
             One App, Four Sports
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight">
             PICK YOUR <span className="text-primary">SPORT</span>
           </h2>
           <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
@@ -55,7 +55,7 @@ export default function Sports() {
           {sports.map((sport, idx) => (
             <FadeIn key={sport.name} delay={0.2 + idx * 0.1} direction="up">
               <div
-                className="group relative h-full rounded-2xl border border-white/5 bg-card p-8 overflow-hidden transition-all duration-300 hover:-translate-y-2"
+                className="group relative h-full rounded-2xl border border-white/5 bg-card p-6 sm:p-8 overflow-hidden transition-all duration-300 hover:-translate-y-2"
                 style={{ ['--sport' as string]: sport.color }}
               >
                 {/* Sport-tinted glow on hover */}
