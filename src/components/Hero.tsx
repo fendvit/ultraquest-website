@@ -1,10 +1,12 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import FadeIn from './FadeIn';
 import { AppStoreButton, GooglePlayButton } from './StoreButtons';
+import { useIsDesktop } from '../lib/useIsDesktop';
 
 export default function Hero() {
   const { scrollY } = useScroll();
   const scale = useTransform(scrollY, [0, 1000], [1, 1.15]);
+  const isDesktop = useIsDesktop();
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-24 sm:pt-20 pb-16 overflow-hidden">
       {/* Background Image */}
@@ -45,7 +47,9 @@ export default function Hero() {
 
         <FadeIn delay={0.3}>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-xl mb-8 sm:mb-10 leading-relaxed">
-            Run, ride and lift through legendary challenges. Every kilometer and every rep counts, alongside athletes worldwide.
+            {isDesktop
+              ? 'Run, ride, and lift your way through iconic challenges. Track every kilometer and every rep, compete with athletes worldwide, and conquer the impossible.'
+              : 'Run, ride and lift through legendary challenges. Every kilometer and every rep counts, alongside athletes worldwide.'}
           </p>
         </FadeIn>
 

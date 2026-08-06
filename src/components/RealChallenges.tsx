@@ -1,28 +1,34 @@
 import { Timer, Repeat, Users } from 'lucide-react';
 import FadeIn from './FadeIn';
+import { useIsDesktop } from '../lib/useIsDesktop';
 
+// `description` is the full desktop wording; `descriptionShort` is the phone version.
 const challenges = [
   {
     icon: <Repeat className="w-8 h-8 text-primary" />,
     title: '4×4×48',
     meta: '48 hours · 12 rounds',
-    description: 'Run 4 miles every 4 hours for 48 hours. The app tracks each window and reminds you before every round.',
+    description: 'Run 4 miles every 4 hours for 48 hours straight. The app tracks each window live and pushes a reminder before every round begins.',
+    descriptionShort: 'Run 4 miles every 4 hours for 48 hours. The app tracks each window and reminds you before every round.',
   },
   {
     icon: <Timer className="w-8 h-8 text-primary" />,
     title: 'Backyard Ultra',
     meta: 'Last one standing',
-    description: 'A loop on the hour, every hour. Run until only one athlete remains — no finish line, only survival.',
+    description: 'Complete a loop on the hour, every hour. Miss the start and you\'re out. Run until only one athlete remains — there is no finish line, only survival.',
+    descriptionShort: 'A loop on the hour, every hour. Run until only one athlete remains — no finish line, only survival.',
   },
   {
     icon: <Users className="w-8 h-8 text-primary" />,
     title: 'Cohort Events',
     meta: 'Everyone on one clock',
-    description: 'Start together with athletes worldwide and watch the survivors board in real time.',
+    description: 'Register for a scheduled event and start together with athletes worldwide. Watch the survivors board in real time as competitors drop out one by one.',
+    descriptionShort: 'Start together with athletes worldwide and watch the survivors board in real time.',
   },
 ];
 
 export default function RealChallenges() {
+  const isDesktop = useIsDesktop();
   return (
     <section id="real-challenges" className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-[#0a0c0e] to-[#0d1512] border-t border-white/5 relative overflow-hidden">
       {/* Ambient glow */}
@@ -38,7 +44,9 @@ export default function RealChallenges() {
             RACE THE <span className="text-primary">CLOCK</span>
           </h2>
           <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
-            Real-time events where everyone races the same clock. Miss a window and you&apos;re out.
+            {isDesktop
+              ? <>Not every Quest is at your own pace. Real Challenges are real-time endurance events where everyone competes on the same clock — miss a window and you&apos;re out. Grit decides who survives.</>
+              : <>Real-time events where everyone races the same clock. Miss a window and you&apos;re out.</>}
           </p>
         </FadeIn>
 
@@ -52,7 +60,7 @@ export default function RealChallenges() {
                 <div className="text-primary font-semibold text-xs uppercase tracking-widest mb-3">{challenge.meta}</div>
                 <h3 className="text-2xl font-semibold uppercase mb-4">{challenge.title}</h3>
                 <p className="text-gray-400 leading-relaxed text-sm">
-                  {challenge.description}
+                  {isDesktop ? challenge.description : challenge.descriptionShort}
                 </p>
               </div>
             </FadeIn>
@@ -61,7 +69,9 @@ export default function RealChallenges() {
 
         <FadeIn delay={0.5} className="mt-12 text-center">
           <p className="text-gray-500 text-sm">
-            Survive one and earn a <span className="text-primary font-semibold">Battle-Forged</span> badge.
+            {isDesktop ? 'Survive a Real Challenge and earn a ' : 'Survive one and earn a '}
+            <span className="text-primary font-semibold">Battle-Forged</span>
+            {isDesktop ? ' badge — a permanent mark that you made it through.' : ' badge.'}
           </p>
         </FadeIn>
       </div>

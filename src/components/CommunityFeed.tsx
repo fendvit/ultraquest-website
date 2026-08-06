@@ -1,5 +1,6 @@
 import { Flag, TrendingUp, Flame, Award } from 'lucide-react';
 import FadeIn from './FadeIn';
+import { useIsDesktop } from '../lib/useIsDesktop';
 
 const activities = [
   { user: 'Nina P.', text: 'reached <span class="text-primary font-semibold">75%</span> on <strong>UTMB</strong>', time: '32 min ago', icon: <Flag className="w-4 h-4 text-primary" />, initials: 'NP' },
@@ -10,6 +11,7 @@ const activities = [
 ];
 
 export default function CommunityFeed() {
+  const isDesktop = useIsDesktop();
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-[#0a0c0e] relative border-t border-white/5">
       <div className="container mx-auto px-5 sm:px-6 max-w-3xl">
@@ -20,7 +22,7 @@ export default function CommunityFeed() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 uppercase">
             The Community in <span className="text-primary">Motion</span>
           </h2>
-          <p className="text-gray-400">Athletes conquering Quests across every sport, right now.</p>
+          <p className="text-gray-400">{isDesktop ? 'Watch athletes from around the world conquering their Quests across every sport in real-time.' : 'Athletes conquering Quests across every sport, right now.'}</p>
         </FadeIn>
 
         <FadeIn delay={0.2} direction="up" className="bg-[#1c1f22] border border-white/5 rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl relative overflow-hidden">

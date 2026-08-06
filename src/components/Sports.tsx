@@ -1,5 +1,6 @@
 import { Footprints, Bike, Dumbbell, PersonStanding } from 'lucide-react';
 import FadeIn from './FadeIn';
+import { useIsDesktop } from '../lib/useIsDesktop';
 
 const sports = [
   {
@@ -34,6 +35,7 @@ const sports = [
 ];
 
 export default function Sports() {
+  const isDesktop = useIsDesktop();
   return (
     <section className="py-16 sm:py-20 md:py-24 bg-[#0a0c0e] relative border-t border-white/5 overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
@@ -47,7 +49,9 @@ export default function Sports() {
             PICK YOUR <span className="text-primary">SPORT</span>
           </h2>
           <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
-            Switch anytime — each sport brings its own Quests, leaderboards and badges.
+            {isDesktop
+              ? 'Switch sports anytime and the whole app adapts — its own Quests, leaderboards, badges and theme for each. Train the way you want, all in one place.'
+              : 'Switch anytime — each sport brings its own Quests, leaderboards and badges.'}
           </p>
         </FadeIn>
 

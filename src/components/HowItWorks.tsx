@@ -1,25 +1,32 @@
 import FadeIn from './FadeIn';
+import { useIsDesktop } from '../lib/useIsDesktop';
 
+// `desc` is the full desktop wording; `descShort` is the condensed phone version.
 const steps = [
   {
     title: 'CREATE YOUR ACCOUNT',
-    desc: 'Sign up in seconds, pick your sport, and connect Strava or use built-in GPS.',
+    desc: 'Sign up in seconds and set up your athlete profile. Pick your sport, connect Strava for automatic syncing, or use built-in GPS tracking.',
+    descShort: 'Sign up in seconds, pick your sport, and connect Strava or use built-in GPS.',
   },
   {
     title: 'CHOOSE YOUR QUEST',
-    desc: 'Pick one Quest to focus on — a legendary ultra, a cycling epic or a strength challenge.',
+    desc: 'Pick a Quest to focus on — a legendary ultra, a cycling epic, or a strength challenge. Complete it or leave to start a new adventure, one at a time.',
+    descShort: 'Pick one Quest to focus on — a legendary ultra, a cycling epic or a strength challenge.',
   },
   {
     title: 'LOG YOUR SESSIONS',
-    desc: 'Track with built-in GPS — it keeps recording with the screen off — sync from Strava, or log sets and reps.',
+    desc: 'Use the built-in GPS tracker (it keeps recording in the background, even with the screen off), sync from Strava, or log your strength sets and reps. Every kilometer and rep counts toward your active Quest.',
+    descShort: 'Track with built-in GPS — it keeps recording with the screen off — sync from Strava, or log sets and reps.',
   },
   {
     title: 'FINISH & EARN REWARDS',
-    desc: 'Unlock tiered badges and level up. Join Medal Races to earn real medals shipped to your door.',
+    desc: 'Complete Quests to unlock tiered badges and level up. Join Medal Races to earn real physical medals shipped to your door.',
+    descShort: 'Unlock tiered badges and level up. Join Medal Races to earn real medals shipped to your door.',
   }
 ];
 
 export default function HowItWorks() {
+  const isDesktop = useIsDesktop();
   return (
     <section id="how-it-works" className="py-16 sm:py-20 md:py-24 bg-[#0d1512] bg-grid-pattern relative border-t border-white/5">
       <div className="container mx-auto px-5 sm:px-6 max-w-4xl">
@@ -30,7 +37,7 @@ export default function HowItWorks() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 uppercase">
             How It <span className="text-primary">Works</span>
           </h2>
-          <p className="text-gray-400">Four steps from signup to your first finish.</p>
+          <p className="text-gray-400">{isDesktop ? 'Simple, straightforward, and designed to keep you motivated every step of the way.' : 'Four steps from signup to your first finish.'}</p>
         </FadeIn>
 
         <div className="relative pl-4 md:pl-0">
@@ -52,7 +59,7 @@ export default function HowItWorks() {
               <FadeIn delay={0.3 + index * 0.1} direction="left" className="pt-1">
                 <h3 className="text-xl font-semibold uppercase mb-2 group-hover:text-primary transition-colors">{step.title}</h3>
                 <p className="text-gray-400 leading-relaxed max-w-2xl text-sm md:text-base">
-                  {step.desc}
+                  {isDesktop ? step.desc : step.descShort}
                 </p>
               </FadeIn>
             </div>
