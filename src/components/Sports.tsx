@@ -47,7 +47,7 @@ export default function Sports() {
             PICK YOUR <span className="text-primary">SPORT</span>
           </h2>
           <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
-            Switch sports anytime and the whole app adapts — its own Quests, leaderboards, badges and theme for each. Train the way you want, all in one place.
+            Switch anytime — each sport brings its own Quests, leaderboards and badges.
           </p>
         </FadeIn>
 

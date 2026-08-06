@@ -45,7 +45,7 @@ export default function Hero() {
 
         <FadeIn delay={0.3}>
           <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-xl mb-8 sm:mb-10 leading-relaxed">
-            Run, ride, and lift your way through iconic challenges. Track every kilometer and every rep, compete with athletes worldwide, and conquer the impossible.
+            Run, ride and lift through legendary challenges. Every kilometer and every rep counts, alongside athletes worldwide.
           </p>
         </FadeIn>
 

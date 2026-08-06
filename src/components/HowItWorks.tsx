@@ -3,19 +3,19 @@ import FadeIn from './FadeIn';
 const steps = [
   {
     title: 'CREATE YOUR ACCOUNT',
-    desc: 'Sign up in seconds and set up your athlete profile. Pick your sport, connect Strava for automatic syncing, or use built-in GPS tracking.',
+    desc: 'Sign up in seconds, pick your sport, and connect Strava or use built-in GPS.',
   },
   {
     title: 'CHOOSE YOUR QUEST',
-    desc: 'Pick a Quest to focus on — a legendary ultra, a cycling epic, or a strength challenge. Complete it or leave to start a new adventure, one at a time.',
+    desc: 'Pick one Quest to focus on — a legendary ultra, a cycling epic or a strength challenge.',
   },
   {
     title: 'LOG YOUR SESSIONS',
-    desc: 'Use the built-in GPS tracker (it keeps recording in the background, even with the screen off), sync from Strava, or log your strength sets and reps. Every kilometer and rep counts toward your active Quest.',
+    desc: 'Track with built-in GPS — it keeps recording with the screen off — sync from Strava, or log sets and reps.',
   },
   {
     title: 'FINISH & EARN REWARDS',
-    desc: 'Complete Quests to unlock tiered badges and level up. Join Medal Races to earn real physical medals shipped to your door.',
+    desc: 'Unlock tiered badges and level up. Join Medal Races to earn real medals shipped to your door.',
   }
 ];
 
@@ -30,7 +30,7 @@ export default function HowItWorks() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 uppercase">
             How It <span className="text-primary">Works</span>
           </h2>
-          <p className="text-gray-400">Simple, straightforward, and designed to keep you motivated every step of the way.</p>
+          <p className="text-gray-400">Four steps from signup to your first finish.</p>
         </FadeIn>
 
         <div className="relative pl-4 md:pl-0">

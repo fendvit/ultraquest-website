@@ -12,6 +12,9 @@ type Quest = {
   icon?: LucideIcon;
   // HSL accent (mirrors src/config/sports.ts). Defaults to the running/orange primary.
   color?: string;
+  // Shown from `sm` up only — phones get the first four, which is already one
+  // quest per sport, so the multi-sport pitch survives the shorter list.
+  desktopOnly?: boolean;
 };
 
 const quests: Quest[] = [
@@ -22,22 +25,6 @@ const quests: Quest[] = [
     difficulty: "Extreme",
     progress: "33%",
     image: "/images/badwater_bg.png",
-  },
-  {
-    name: "UTMB",
-    location: "Chamonix, France",
-    distance: "171 km",
-    difficulty: "Expert",
-    progress: "33%",
-    image: "/images/utmb_bg.png",
-  },
-  {
-    name: "KRAKONOŠOVA STOVKA",
-    location: "Czech Republic",
-    distance: "100 km",
-    difficulty: "Hard",
-    progress: "33%",
-    image: "/images/krakonosova_bg.png",
   },
   {
     name: "EVERESTING",
@@ -65,6 +52,24 @@ const quests: Quest[] = [
     progress: "52%",
     icon: PersonStanding,
     color: "96 60% 45%",
+  },
+  {
+    name: "UTMB",
+    location: "Chamonix, France",
+    distance: "171 km",
+    difficulty: "Expert",
+    progress: "33%",
+    image: "/images/utmb_bg.png",
+    desktopOnly: true,
+  },
+  {
+    name: "KRAKONOŠOVA STOVKA",
+    location: "Czech Republic",
+    distance: "100 km",
+    difficulty: "Hard",
+    progress: "33%",
+    image: "/images/krakonosova_bg.png",
+    desktopOnly: true,
   },
 ];
 
@@ -94,10 +99,10 @@ export default function FeaturedRaces() {
               <FadeIn
                 key={index}
                 delay={0.2 + (index % 3) * 0.1}
-                className="group cursor-pointer relative overflow-hidden rounded-2xl bg-card border border-white/5 transition-all duration-300"
+                className={`group cursor-pointer relative overflow-hidden rounded-2xl bg-card border border-white/5 transition-all duration-300 ${quest.desktopOnly ? 'hidden sm:block' : ''}`}
               >
                 <div
-                  className="aspect-[3/4] relative"
+                  className="aspect-[4/3] sm:aspect-[3/4] relative"
                   style={{ ['--accent' as string]: accent }}
                 >
                   {quest.image ? (

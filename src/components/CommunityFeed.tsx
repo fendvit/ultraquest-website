@@ -20,7 +20,7 @@ export default function CommunityFeed() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 uppercase">
             The Community in <span className="text-primary">Motion</span>
           </h2>
-          <p className="text-gray-400">Watch athletes from around the world conquering their Quests across every sport in real-time.</p>
+          <p className="text-gray-400">Athletes conquering Quests across every sport, right now.</p>
         </FadeIn>
 
         <FadeIn delay={0.2} direction="up" className="bg-[#1c1f22] border border-white/5 rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl relative overflow-hidden">

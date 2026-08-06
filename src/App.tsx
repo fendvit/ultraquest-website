@@ -2,7 +2,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
 import Sports from './components/Sports';
-import Expedition from './components/Expedition';
 import AppShowcase from './components/AppShowcase';
 import HowItWorks from './components/HowItWorks';
 import FeaturedRaces from './components/FeaturedRaces';
@@ -38,7 +37,6 @@ function App() {
         <Stats />
         <Sports />
         <AppShowcase />
-        <Expedition />
         <HowItWorks />
         <FeaturedRaces />
         <RealChallenges />

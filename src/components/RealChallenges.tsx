@@ -6,19 +6,19 @@ const challenges = [
     icon: <Repeat className="w-8 h-8 text-primary" />,
     title: '4×4×48',
     meta: '48 hours · 12 rounds',
-    description: 'Run 4 miles every 4 hours for 48 hours straight. The app tracks each window live and pushes a reminder before every round begins.',
+    description: 'Run 4 miles every 4 hours for 48 hours. The app tracks each window and reminds you before every round.',
   },
   {
     icon: <Timer className="w-8 h-8 text-primary" />,
     title: 'Backyard Ultra',
     meta: 'Last one standing',
-    description: 'Complete a loop on the hour, every hour. Miss the start and you\'re out. Run until only one athlete remains — there is no finish line, only survival.',
+    description: 'A loop on the hour, every hour. Run until only one athlete remains — no finish line, only survival.',
   },
   {
     icon: <Users className="w-8 h-8 text-primary" />,
     title: 'Cohort Events',
     meta: 'Everyone on one clock',
-    description: 'Register for a scheduled event and start together with athletes worldwide. Watch the survivors board in real time as competitors drop out one by one.',
+    description: 'Start together with athletes worldwide and watch the survivors board in real time.',
   },
 ];
 
@@ -38,7 +38,7 @@ export default function RealChallenges() {
             RACE THE <span className="text-primary">CLOCK</span>
           </h2>
           <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
-            Not every Quest is at your own pace. Real Challenges are real-time endurance events where everyone competes on the same clock — miss a window and you&apos;re out. Grit decides who survives.
+            Real-time events where everyone races the same clock. Miss a window and you&apos;re out.
           </p>
         </FadeIn>
 
@@ -61,7 +61,7 @@ export default function RealChallenges() {
 
         <FadeIn delay={0.5} className="mt-12 text-center">
           <p className="text-gray-500 text-sm">
-            Survive a Real Challenge and earn a <span className="text-primary font-semibold">Battle-Forged</span> badge — a permanent mark that you made it through.
+            Survive one and earn a <span className="text-primary font-semibold">Battle-Forged</span> badge.
           </p>
         </FadeIn>
       </div>

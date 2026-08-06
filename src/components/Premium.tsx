@@ -19,7 +19,7 @@ export default function Premium() {
             <span className="text-primary">Full Potential</span>
           </h2>
           <p className="text-gray-400 text-lg">
-            Elevate your training across every sport with Premium at just $7.99/month.
+            Unlock more from every sport for $7.99/month.
           </p>
         </FadeIn>
 
@@ -35,7 +35,7 @@ export default function Premium() {
               </div>
               <h3 className="text-xl font-bold mb-3 uppercase">AI Training Insights</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Get personalized training recommendations powered by AI. Analyze your patterns, detect trends, and optimize recovery.
+                Personalized recommendations that analyze your patterns and optimize recovery.
               </p>
             </div>
           </FadeIn>
@@ -50,7 +50,7 @@ export default function Premium() {
               </div>
               <h3 className="text-xl font-bold mb-3 uppercase">Custom Quest Creation</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Design your own Quests for any sport with custom distances, reps and descriptions. Share invite codes to compete with friends and clubs.
+                Design Quests for any sport with custom distances and reps. Share invite codes with friends and clubs.
               </p>
             </div>
           </FadeIn>
@@ -65,7 +65,7 @@ export default function Premium() {
               </div>
               <h3 className="text-xl font-bold mb-3 uppercase">Free Medal Race Entries</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Join all Medal Races at no extra cost. Earn real physical medals shipped to your door when you finish.
+                Join every Medal Race free and earn real medals shipped to your door.
               </p>
             </div>
           </FadeIn>
