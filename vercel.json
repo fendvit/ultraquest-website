@@ -2,12 +2,12 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/auth", "destination": "/open/index.html" },
-    { "source": "/clubs/:path*", "destination": "/open/index.html" },
-    { "source": "/events/:path*", "destination": "/open/index.html" },
-    { "source": "/activity/:path*", "destination": "/open/index.html" },
-    { "source": "/profile/:path*", "destination": "/open/index.html" },
-    { "source": "/athlete/:path*", "destination": "/open/index.html" },
-    { "source": "/races/:path*", "destination": "/open/index.html" }
+    { "source": "/auth", "destination": "/open" },
+    { "source": "/clubs/:path*", "destination": "/open" },
+    { "source": "/events/:path*", "destination": "/open" },
+    { "source": "/activity/:path*", "destination": "/open" },
+    { "source": "/profile/:path*", "destination": "/open" },
+    { "source": "/athlete/:path*", "destination": "/open" },
+    { "source": "/races/:path*", "destination": "/open" }
   ]
 }
