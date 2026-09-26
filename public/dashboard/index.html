@@ -6,33 +6,8 @@
   <meta name="robots" content="noindex" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <title>UltraQuest</title>
-  <style>
-    html, body { margin: 0; min-height: 100%; }
-    body {
-      background: #0d0f13; color: #f4f6fb;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      display: flex; align-items: center; justify-content: center; text-align: center;
-      min-height: 100vh; padding: 24px; box-sizing: border-box;
-    }
-    .card { max-width: 360px; }
-    .logo { height: 64px; margin: 0 auto 28px; display: block; }
-    .badge {
-      width: 64px; height: 64px; margin: 0 auto 20px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(255,106,43,.12); color: #ff6a2b;
-    }
-    .badge.error { background: rgba(239,68,68,.12); color: #ef4444; }
-    .badge svg { width: 32px; height: 32px; }
-    h1 { font-size: 1.35rem; margin: 0 0 8px; }
-    p { color: #9aa3b2; font-size: .95rem; margin: 0 0 22px; line-height: 1.55; }
-    a.btn {
-      display: inline-block; background: #ff6a2b; color: #fff; text-decoration: none;
-      padding: 12px 22px; border-radius: 10px; font-weight: 600; font-size: .95rem;
-    }
-    a.plain { color: #ff8a55; }
-    .small { font-size: .85rem; margin-top: 20px; margin-bottom: 0; }
-    [hidden] { display: none !important; }
-  </style>
+  <link rel="stylesheet" href="/app-bridge/bridge.css" />
+  <script src="/app-bridge/bridge.js"></script>
 </head>
 <body>
   <!--
@@ -48,7 +23,7 @@
     <img class="logo" src="/images/logo-main.png" alt="UltraQuest" />
 
     <div id="ok">
-      <div class="badge">
+      <div class="badge" id="ok-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
       </div>
       <h1 id="ok-title">Email confirmed</h1>
@@ -64,8 +39,8 @@
     </div>
 
     <div id="mobile" hidden>
-      <a class="btn" id="open" href="com.lovable.ultrarunquest://dashboard">Open UltraQuest</a>
-      <p class="small">Don't have the app yet? <a class="plain" href="/">Get UltraQuest</a></p>
+      <a class="btn" id="open" href="#">Open UltraQuest</a>
+      <p class="small">Don't have the app yet? <a class="plain" id="store" href="/">Get UltraQuest</a></p>
     </div>
 
     <div id="desktop" hidden>
@@ -75,41 +50,30 @@
 
   <script>
     (function () {
-      var hash = new URLSearchParams(window.location.hash.replace(/^#/, ''));
-      var query = new URLSearchParams(window.location.search);
-      var get = function (k) { return hash.get(k) || query.get(k); };
-
-      var hasError = !!(get('error') || get('error_code'));
-      var hasSession = !!(hash.get('access_token') && hash.get('refresh_token'));
-      var isSignup = hasSession || get('type') === 'signup';
+      var p = UQ.params();
+      var hasError = !!(p.get('error') || p.get('error_code'));
+      var hasSession = !!(p.hash.get('access_token') && p.hash.get('refresh_token'));
+      var isSignup = hasSession || p.get('type') === 'signup';
 
       if (hasError) {
-        document.getElementById('ok').hidden = true;
-        document.getElementById('err').hidden = false;
+        UQ.show('ok', false);
+        UQ.show('err');
       } else if (!isSignup) {
         // Plain visit to /dashboard (no confirmation link involved).
-        document.querySelector('#ok .badge').hidden = true;
-        document.getElementById('ok-title').textContent = 'Your dashboard lives in the app';
-        document.getElementById('ok-text').textContent = 'UltraQuest is a mobile app. Open it on your phone to see your quests and progress.';
+        UQ.show('ok-badge', false);
+        UQ.text('ok-title', 'Your dashboard lives in the app');
+        UQ.text('ok-text', 'UltraQuest is a mobile app. Open it on your phone to see your quests and progress.');
       }
 
-      var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-      document.getElementById(isMobile ? 'mobile' : 'desktop').hidden = false;
+      UQ.show(UQ.isMobile ? 'mobile' : 'desktop');
+      UQ.$('store').href = UQ.storeUrl;
 
       // Hand the fresh session to the app so the user lands in it already
       // logged in (DeepLinkHandler reads the tokens from the hash). Without a
       // session the app simply opens on its normal start screen.
-      if (hasSession && !hasError) {
-        document.getElementById('open').setAttribute(
-          'href', 'com.lovable.ultrarunquest://dashboard' + window.location.hash
-        );
-      }
+      UQ.$('open').href = UQ.appLink('/dashboard' + (hasSession && !hasError ? window.location.hash : ''));
 
-      // Don't leave auth tokens sitting in the address bar / history.
-      if (window.location.hash) {
-        history.replaceState(null, '', window.location.pathname);
-      }
+      UQ.clearHash();
     })();
   </script>
 </body>
