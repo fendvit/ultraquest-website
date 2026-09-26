@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <title>UltraQuest</title>
+  <link rel="stylesheet" href="/app-bridge/bridge.css" />
+  <script src="/app-bridge/bridge.js"></script>
+</head>
+<body>
+  <!--
+    Supabase sends the signup email-confirmation link back to
+    https://ultraquest.app/dashboard (the app's emailRedirectTo). When App Links
+    / Universal Links are verified the OS opens the app before this page loads;
+    this page is the fallback for everything else — a desktop browser, or a
+    phone where the link opened in a browser. The dashboard only exists inside
+    the mobile app, so instead of a 404 we confirm the email and point the user
+    back to the app.
+  -->
+  <div class="card">
+    <img class="logo" src="/images/logo-main.png" alt="UltraQuest" />
+
+    <div id="ok">
+      <div class="badge" id="ok-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h1 id="ok-title">Email confirmed</h1>
+      <p id="ok-text">Your account is ready. Continue in the UltraQuest mobile app and log in with your email and password.</p>
+    </div>
+
+    <div id="err" hidden>
+      <div class="badge error">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      </div>
+      <h1>This link is no longer valid</h1>
+      <p>The confirmation link has expired or was already used. If you already confirmed your email, just log in in the UltraQuest app. Otherwise sign up again to get a new link.</p>
+    </div>
+
+    <div id="mobile" hidden>
+      <a class="btn" id="open" href="#">Open UltraQuest</a>
+      <p class="small">Don't have the app yet? <a class="plain" id="store" href="/">Get UltraQuest</a></p>
+    </div>
+
+    <div id="desktop" hidden>
+      <p class="small">Open the UltraQuest app on your phone to continue. Don't have it yet? <a class="plain" href="/">Get UltraQuest</a></p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var p = UQ.params();
+      var hasError = !!(p.get('error') || p.get('error_code'));
+      var hasSession = !!(p.hash.get('access_token') && p.hash.get('refresh_token'));
+      var isSignup = hasSession || p.get('type') === 'signup';
+
+      if (hasError) {
+        UQ.show('ok', false);
+        UQ.show('err');
+      } else if (!isSignup) {
+        // Plain visit to /dashboard (no confirmation link involved).
+        UQ.show('ok-badge', false);
+        UQ.text('ok-title', 'Your dashboard lives in the app');
+        UQ.text('ok-text', 'UltraQuest is a mobile app. Open it on your phone to see your quests and progress.');
+      }
+
+      UQ.show(UQ.isMobile ? 'mobile' : 'desktop');
+      UQ.$('store').href = UQ.storeUrl;
+
+      // Hand the fresh session to the app so the user lands in it already
+      // logged in (DeepLinkHandler reads the tokens from the hash). Without a
+      // session the app simply opens on its normal start screen.
+      UQ.$('open').href = UQ.appLink('/dashboard' + (hasSession && !hasError ? window.location.hash : ''));
+
+      UQ.clearHash();
+    })();
+  </script>
+</body>
+</html>

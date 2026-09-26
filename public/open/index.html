@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <title>UltraQuest</title>
+  <link rel="stylesheet" href="/app-bridge/bridge.css" />
+  <script src="/app-bridge/bridge.js"></script>
+</head>
+<body>
+  <!--
+    Links the app shares (referral invites, club invites, events, athlete
+    profiles, activities) point at https://ultraquest.app/<app route>. Those
+    screens only exist inside the mobile app, so vercel.json rewrites every such
+    path to this page, which explains what the link is and hands it to the app
+    through the custom scheme (DeepLinkHandler opens the matching screen).
+  -->
+  <div class="card">
+    <img class="logo" src="/images/logo-main.png" alt="UltraQuest" />
+    <h1 id="title">Open in UltraQuest</h1>
+    <p id="text">This link opens in the UltraQuest mobile app.</p>
+    <div id="code-box" hidden><div class="code" id="code"></div></div>
+
+    <div id="mobile" hidden>
+      <a class="btn" id="open" href="#">Open in UltraQuest</a>
+      <p class="small">Don't have the app yet? <a class="plain" id="store" href="/">Get UltraQuest</a></p>
+    </div>
+    <div id="desktop" hidden>
+      <p class="small" id="desktop-text">Open this link on your phone with the UltraQuest app installed. Don't have it yet? <a class="plain" href="/">Get UltraQuest</a></p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var path = window.location.pathname.replace(/\/+$/, '') || '/';
+      var query = new URLSearchParams(window.location.search);
+      var seg = path.split('/').filter(Boolean).map(function (s) {
+        try { return decodeURIComponent(s); } catch (e) { return s; }
+      });
+      var code = null;
+      var title = 'Open in UltraQuest';
+      var text = 'This link opens in the UltraQuest mobile app.';
+
+      if (seg[0] === 'auth') {
+        var ref = query.get('ref');
+        if (ref) {
+          title = "You're invited to UltraQuest";
+          text = 'A friend invited you to take on legendary quests. Install the app, then open this link on your phone to sign up with their invite.';
+          code = ref.toUpperCase();
+        } else {
+          title = 'Log in to UltraQuest';
+          text = 'UltraQuest is a mobile app. Open it on your phone to log in or create an account.';
+        }
+      } else if (seg[0] === 'clubs' && seg[1] === 'join') {
+        title = "You're invited to join a club";
+        text = 'Open the link in the UltraQuest app to join. You can also enter the invite code in the app under Clubs → Join a club.';
+        code = query.get('code') && query.get('code').toUpperCase();
+      } else if (seg[0] === 'events') {
+        title = 'Join this event on UltraQuest';
+        text = 'See the event details and join it in the UltraQuest app.';
+      } else if (seg[0] === 'activity') {
+        title = 'See this activity on UltraQuest';
+        text = 'This activity was shared from UltraQuest. Open it in the app to see the details.';
+      } else if (seg[0] === 'profile' || seg[0] === 'athlete') {
+        title = seg[0] === 'profile' && seg[1] ? '@' + seg[1] + ' on UltraQuest' : 'See this athlete on UltraQuest';
+        text = 'Follow their quests and progress in the UltraQuest app.';
+      } else if (seg[0] === 'races') {
+        title = 'Join this quest on UltraQuest';
+        text = 'Open it in the UltraQuest app to see the quest and join in.';
+      }
+
+      document.title = title + ' | UltraQuest';
+      UQ.text('title', title);
+      UQ.text('text', text);
+      if (code) {
+        UQ.text('code', code);
+        UQ.show('code-box');
+      }
+
+      UQ.$('open').href = UQ.appLink(path + window.location.search);
+      UQ.$('store').href = UQ.storeUrl;
+      UQ.show(UQ.isMobile ? 'mobile' : 'desktop');
+    })();
+  </script>
+</body>
+</html>

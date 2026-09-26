@@ -9,7 +9,10 @@
           { "/": "/strava-callback*" },
           { "/": "/reset-password*" },
           { "/": "/activity/*" },
-          { "/": "/profile/*" }
+          { "/": "/profile/*" },
+          { "/": "/athlete/*" },
+          { "/": "/clubs/join*" },
+          { "/": "/events/*" }
         ]
       }
     ]

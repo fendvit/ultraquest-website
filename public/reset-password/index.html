@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <title>Reset password | UltraQuest</title>
+  <link rel="stylesheet" href="/app-bridge/bridge.css" />
+  <script src="/app-bridge/bridge.js"></script>
+</head>
+<body>
+  <!--
+    The app's "Forgot password" email redirects to
+    https://ultraquest.app/reset-password#access_token=…&type=recovery. When the
+    link opens in a browser instead of the app, the user sets the new password
+    right here (a direct call to Supabase Auth with the recovery session), so
+    the reset works on a computer too. On phones they can also finish it in the
+    app instead.
+  -->
+  <div class="card">
+    <img class="logo" src="/images/logo-main.png" alt="UltraQuest" />
+
+    <div id="form-view" hidden>
+      <h1>Set a new password</h1>
+      <p>Choose a new password for your UltraQuest account.</p>
+      <form id="form" novalidate>
+        <label for="password">New password</label>
+        <input id="password" type="password" autocomplete="new-password" minlength="8" required placeholder="At least 8 characters" />
+        <label for="confirm">Confirm new password</label>
+        <input id="confirm" type="password" autocomplete="new-password" minlength="8" required />
+        <div class="form-error" id="form-error" hidden></div>
+        <button class="btn block" id="submit" type="submit">Update password</button>
+      </form>
+      <p class="small" id="in-app" hidden>Prefer the app? <a class="plain" id="open-reset" href="#">Reset it in UltraQuest</a></p>
+    </div>
+
+    <div id="done-view" hidden>
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h1>Password updated</h1>
+      <p>You can now log in to the UltraQuest app with your new password.</p>
+    </div>
+
+    <div id="err-view" hidden>
+      <div class="badge error">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      </div>
+      <h1>This link is no longer valid</h1>
+      <p>The password reset link has expired or was already used. Request a new one in the UltraQuest app: tap <strong>Forgot password?</strong> on the login screen.</p>
+    </div>
+
+    <div id="mobile" hidden>
+      <a class="btn" id="open" href="#">Open UltraQuest</a>
+      <p class="small">Don't have the app yet? <a class="plain" id="store" href="/">Get UltraQuest</a></p>
+    </div>
+    <div id="desktop" hidden>
+      <p class="small">Continue in the UltraQuest app on your phone. Don't have it yet? <a class="plain" href="/">Get UltraQuest</a></p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // Public project URL + publishable key (the same ones shipped in the app).
+      var SUPABASE_URL = 'https://psashqimyqshzogttdps.supabase.co';
+      var SUPABASE_KEY = 'sb_publishable_kbCAdCVi-ORP0idleoh27w_Ej4TYUbJ';
+
+      var p = UQ.params();
+      var accessToken = p.hash.get('access_token');
+      var hasError = !!(p.get('error') || p.get('error_code'));
+      var recoveryHash = window.location.hash;
+      UQ.clearHash();
+
+      UQ.$('store').href = UQ.storeUrl;
+      UQ.$('open').href = UQ.appLink('/auth');
+
+      function showOutcome(view) {
+        UQ.show('form-view', false);
+        UQ.show(view);
+        UQ.show(UQ.isMobile ? 'mobile' : 'desktop');
+      }
+
+      if (hasError || !accessToken) {
+        showOutcome('err-view');
+        return;
+      }
+
+      UQ.show('form-view');
+      if (UQ.isMobile) {
+        // Same link the app's DeepLinkHandler handles: it opens the in-app reset screen.
+        UQ.$('open-reset').href = UQ.appLink('/reset-password' + recoveryHash);
+        UQ.show('in-app');
+      }
+
+      var form = UQ.$('form');
+      var submit = UQ.$('submit');
+      function fail(msg) {
+        UQ.text('form-error', msg);
+        UQ.show('form-error');
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        UQ.show('form-error', false);
+        var password = UQ.$('password').value;
+        if (password.length < 8) return fail('Password must be at least 8 characters.');
+        if (password !== UQ.$('confirm').value) return fail("Passwords don't match.");
+
+        submit.disabled = true;
+        submit.textContent = 'Updating…';
+        fetch(SUPABASE_URL + '/auth/v1/user', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            apikey: SUPABASE_KEY,
+            Authorization: 'Bearer ' + accessToken,
+          },
+          body: JSON.stringify({ password: password }),
+        })
+          .then(function (res) {
+            if (res.ok) return showOutcome('done-view');
+            return res.json().catch(function () { return {}; }).then(function (body) {
+              if (res.status === 401 || res.status === 403) return showOutcome('err-view');
+              fail(body.msg || body.message || body.error_description || 'Could not update your password. Please try again.');
+            });
+          })
+          .catch(function () {
+            fail('Network error. Check your connection and try again.');
+          })
+          .then(function () {
+            submit.disabled = false;
+            submit.textContent = 'Update password';
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
