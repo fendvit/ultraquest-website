@@ -1,6 +1,9 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/premium", "destination": "/", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/auth", "destination": "/open" },
     { "source": "/clubs/:path*", "destination": "/open" },

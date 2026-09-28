@@ -7,7 +7,6 @@ import HowItWorks from './components/HowItWorks';
 import FeaturedRaces from './components/FeaturedRaces';
 import RealChallenges from './components/RealChallenges';
 import CommunityFeed from './components/CommunityFeed';
-import Premium from './components/Premium';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 
@@ -41,7 +40,6 @@ function App() {
         <FeaturedRaces />
         <RealChallenges />
         <CommunityFeed />
-        <Premium />
         <FAQ />
       </main>
       <Footer />

@@ -20,8 +20,8 @@ const steps = [
   },
   {
     title: 'FINISH & EARN REWARDS',
-    desc: 'Complete Quests to unlock tiered badges and level up. Join Medal Races to earn real physical medals shipped to your door.',
-    descShort: 'Unlock tiered badges and level up. Join Medal Races to earn real medals shipped to your door.',
+    desc: 'Complete Quests to unlock tiered badges and level up. Climb the leaderboards with your friends and clubs.',
+    descShort: 'Unlock tiered badges, level up and climb the leaderboards.',
   }
 ];
 

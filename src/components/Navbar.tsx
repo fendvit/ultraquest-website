@@ -6,7 +6,6 @@ import { freezeScroll, unfreezeScroll } from '../lib/smoothScroll';
 const NAV_LINKS = [
   { href: '#how-it-works', id: 'how-it-works', label: 'HOW IT WORKS' },
   { href: '#races', id: 'races', label: 'QUESTS' },
-  { href: '#premium', id: 'premium', label: 'PREMIUM', accent: true },
   { href: '#faq', id: 'faq', label: 'FAQ' },
 ];
 
@@ -30,7 +29,7 @@ export default function Navbar() {
       });
     }, { rootMargin: '-20% 0px -80% 0px' });
 
-    const sections = ['how-it-works', 'races', 'premium', 'faq'];
+    const sections = ['how-it-works', 'races', 'faq'];
     sections.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
@@ -134,7 +133,7 @@ export default function Navbar() {
                 key={link.id}
                 href={link.href}
                 onClick={(e) => scrollTo(e, link.href)}
-                className={navLinkClass(link.id, link.accent ? 'text-primary hover:text-[#e65c00]' : '')}
+                className={navLinkClass(link.id, '')}
               >
                 {link.label}
               </a>
@@ -178,11 +177,9 @@ export default function Navbar() {
                   href={link.href}
                   onClick={(e) => scrollTo(e, link.href)}
                   className={`py-4 text-lg font-semibold tracking-wide border-b border-white/5 transition-colors ${
-                    link.accent
-                      ? 'text-primary'
-                      : activeSection === link.id
-                        ? 'text-white'
-                        : 'text-gray-300 hover:text-white'
+                    activeSection === link.id
+                      ? 'text-white'
+                      : 'text-gray-300 hover:text-white'
                   }`}
                 >
                   {link.label}

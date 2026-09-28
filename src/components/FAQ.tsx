@@ -29,15 +29,7 @@ const faqs = [
   },
   {
     question: "Is it free to participate?",
-    answer: "Yes! The core UltraQuest experience is completely free across all four sports. You can join Quests, track your activity, sync with Strava, join clubs, and earn badges at no cost. We also offer a Premium tier with advanced features and free Medal Race entries."
-  },
-  {
-    question: "What are Medal Races?",
-    answer: "Medal Races are special events where you earn a real, physical medal shipped directly to your door upon completion! These have an entry fee ($5/race), but they are completely free to enter if you have an UltraQuest Premium subscription."
-  },
-  {
-    question: "What is UltraQuest Premium?",
-    answer: "Premium is our subscription tier ($7.99/month) that unlocks your full potential. It includes AI Training Insights, the ability to create Custom Quests for any sport, and free entry to all Medal Races."
+    answer: "Yes! The core UltraQuest experience is completely free across all four sports. You can join Quests, track your activity, sync with Strava, join clubs, and earn badges at no cost. There is no subscription to buy."
   },
   {
     question: "Can I connect my Strava account?",
@@ -45,7 +37,7 @@ const faqs = [
   },
   {
     question: "What are custom Quests?",
-    answer: "Custom Quests are a Premium feature that lets you design your own challenges for any sport, with custom distances or rep goals. Share invite codes with your friends or clubs to compete together on your own terms."
+    answer: "Custom Quests let you design your own challenges for any sport, with custom distances or rep goals. Share invite codes with your friends or clubs to compete together on your own terms."
   }
 ];
 

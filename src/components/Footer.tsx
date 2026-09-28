@@ -17,8 +17,6 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-gray-400">
               <li><a href="#" className="hover:text-primary transition-colors">How it Works</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Quests</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Medal Races</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Premium</a></li>
             </ul>
           </div>
 
