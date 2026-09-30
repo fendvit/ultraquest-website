@@ -27,7 +27,7 @@ const quests: Quest[] = [
     image: "/images/badwater_bg.png",
   },
   {
-    name: "EVERESTING",
+    name: "EVERESTING: THE 8848",
     location: "Cycling",
     distance: "8,848 m ↑",
     difficulty: "Brutal",
@@ -36,7 +36,7 @@ const quests: Quest[] = [
     color: "199 92% 50%",
   },
   {
-    name: "IRON GAUNTLET",
+    name: "VOLUME BEAST",
     location: "Weightlifting",
     distance: "100,000 kg",
     difficulty: "Savage",
@@ -45,7 +45,7 @@ const quests: Quest[] = [
     color: "350 80% 55%",
   },
   {
-    name: "1000 PULL-UP QUEST",
+    name: "1000 PULL-UPS",
     location: "Calisthenics",
     distance: "1,000 reps",
     difficulty: "Relentless",

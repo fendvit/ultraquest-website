@@ -39,6 +39,9 @@ export default function Footer() {
             <a href="#" className="hover:text-white transition-colors">Strava Club</a>
           </div>
         </div>
+        <p className="mt-6 text-[11px] text-gray-600 text-center md:text-left">
+          Race names belong to their organisers. UltraQuest is an independent training app and is not affiliated with or endorsed by any race.
+        </p>
       </div>
     </footer>
   );

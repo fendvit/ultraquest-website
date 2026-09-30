@@ -4,10 +4,10 @@ import { useIsDesktop } from '../lib/useIsDesktop';
 
 const activities = [
   { user: 'Nina P.', text: 'reached <span class="text-primary font-semibold">75%</span> on <strong>UTMB</strong>', time: '32 min ago', icon: <Flag className="w-4 h-4 text-primary" />, initials: 'NP' },
-  { user: 'James L.', text: 'logged <span class="text-primary font-semibold">42 km</span> on <strong>Everesting Ride</strong>', time: '25 min ago', icon: <TrendingUp className="w-4 h-4 text-gray-500" />, initials: 'JL' },
-  { user: 'Elena R.', text: 'logged <span class="text-primary font-semibold">2,400 kg</span> on <strong>Iron Gauntlet</strong>', time: '18 min ago', icon: <Flame className="w-4 h-4 text-gray-400" />, initials: 'ER' },
-  { user: 'Alex M.', text: 'completed <strong>Western States</strong>', time: '12 min ago', icon: <Award className="w-4 h-4 text-green-500" />, initials: 'AM' },
-  { user: 'Sarah K.', text: 'reached <span class="text-primary font-semibold">50%</span> on <strong>1000 Pull-Up Quest</strong>', time: '5 min ago', icon: <Flag className="w-4 h-4 text-primary" />, initials: 'SK' },
+  { user: 'James L.', text: 'logged <span class="text-primary font-semibold">42 km</span> on <strong>Everesting: The 8848</strong>', time: '25 min ago', icon: <TrendingUp className="w-4 h-4 text-gray-500" />, initials: 'JL' },
+  { user: 'Elena R.', text: 'logged <span class="text-primary font-semibold">2,400 kg</span> on <strong>Volume Beast</strong>', time: '18 min ago', icon: <Flame className="w-4 h-4 text-gray-400" />, initials: 'ER' },
+  { user: 'Alex M.', text: 'completed <strong>Western States 100</strong>', time: '12 min ago', icon: <Award className="w-4 h-4 text-green-500" />, initials: 'AM' },
+  { user: 'Sarah K.', text: 'reached <span class="text-primary font-semibold">50%</span> on <strong>1000 pull ups</strong>', time: '5 min ago', icon: <Flag className="w-4 h-4 text-primary" />, initials: 'SK' },
 ];
 
 export default function CommunityFeed() {
@@ -17,20 +17,20 @@ export default function CommunityFeed() {
       <div className="container mx-auto px-5 sm:px-6 max-w-3xl">
         <FadeIn className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 border border-primary/30 text-primary text-[10px] font-semibold tracking-widest px-3 py-1 rounded uppercase mb-4">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" /> LIVE ACTIVITY
+            HOW IT LOOKS
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 uppercase">
             The Community in <span className="text-primary">Motion</span>
           </h2>
-          <p className="text-gray-400">{isDesktop ? 'Watch athletes from around the world conquering their Quests across every sport in real-time.' : 'Athletes conquering Quests across every sport, right now.'}</p>
+          <p className="text-gray-400">{isDesktop ? 'Inside the app, every run, ride and set your community logs lands in one feed. The people below are an example.' : 'Every run, ride and set lands in one feed. Example shown.'}</p>
         </FadeIn>
 
         <FadeIn delay={0.2} direction="up" className="bg-[#1c1f22] border border-white/5 rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl relative overflow-hidden">
           <div className="flex justify-between items-center mb-6 pb-6 border-b border-white/5">
             <div className="flex items-center gap-2 text-sm font-semibold tracking-widest text-gray-400 uppercase">
-              <div className="w-2 h-2 rounded-full bg-green-500" /> LIVE FEED
+              EXAMPLE FEED
             </div>
-            <div className="text-xs text-gray-500">Updated in real-time</div>
+            <div className="text-xs text-gray-500">Illustration</div>
           </div>
           
           <div className="space-y-3">
